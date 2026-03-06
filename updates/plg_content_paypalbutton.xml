@@ -10,7 +10,7 @@
         <version>1.0.0</version>
         <infourl title="PayPal Button for Content">https://github.com/uzielweb/paypal-button-payment-for-content</infourl>
         <downloads>
-            <downloadurl type="full" format="zip">https://github.com/uzielweb/paypal-button-payment-for-content/releases/download/v1.0.0/plg_content_paypalbutton-1.0.0.zip</downloadurl>
+            <downloadurl type="full" format="zip">https://github.com/uzielweb/paypal-button-payment-for-content/releases/download/v1.0.0/plg_content_paypalbutton_v1.0.0.zip</downloadurl>
         </downloads>
         <maintainer>Ponto Mega</maintainer>
         <maintainerurl>https://www.pontomega.com.br</maintainerurl>
