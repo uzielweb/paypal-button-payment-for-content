@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="plugin" group="content" method="upgrade">
+    <name>plg_content_paypalbutton</name>
+    <author>Ponto Mega</author>
+    <creationDate>March 2026</creationDate>
+    <copyright>Copyright (C) 2026 Ponto Mega. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>contato@pontomega.com.br</authorEmail>
+    <authorUrl>https://www.pontomega.com.br</authorUrl>
+    <version>1.0.0</version>
+    <description>PLG_CONTENT_PAYPALBUTTON_XML_DESCRIPTION</description>
+    <namespace path="src">PontoMega\Plugin\Content\PaypalButton</namespace>
+    <files>
+        <folder>language</folder>
+        <folder>services</folder>
+        <folder>src</folder>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic" label="PLG_CONTENT_PAYPALBUTTON_FIELDSET_BASIC">
+                <field name="paypal_email" type="text" label="PLG_CONTENT_PAYPALBUTTON_FIELD_PAYPAL_EMAIL_LABEL" description="PLG_CONTENT_PAYPALBUTTON_FIELD_PAYPAL_EMAIL_DESC" required="true" filter="string" />
+                <field name="sandbox" type="radio" label="PLG_CONTENT_PAYPALBUTTON_FIELD_SANDBOX_LABEL" description="PLG_CONTENT_PAYPALBUTTON_FIELD_SANDBOX_DESC" default="1" class="btn-group btn-group-yesno">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="currency" type="list" label="PLG_CONTENT_PAYPALBUTTON_FIELD_CURRENCY_LABEL" description="PLG_CONTENT_PAYPALBUTTON_FIELD_CURRENCY_DESC" default="BRL">
+                    <option value="BRL">BRL - Real Brasileiro</option>
+                    <option value="USD">USD - US Dollar</option>
+                    <option value="EUR">EUR - Euro</option>
+                </field>
+            </fieldset>
+
+            <fieldset name="datasource" label="PLG_CONTENT_PAYPALBUTTON_FIELDSET_DATASOURCE">
+                <field name="source" type="list" label="PLG_CONTENT_PAYPALBUTTON_FIELD_SOURCE_LABEL" description="PLG_CONTENT_PAYPALBUTTON_FIELD_SOURCE_DESC" default="custom_fields">
+                    <option value="custom_fields">PLG_CONTENT_PAYPALBUTTON_OPTION_SOURCE_CUSTOM_FIELDS</option>
+                    <option value="manual_tag">PLG_CONTENT_PAYPALBUTTON_OPTION_SOURCE_MANUAL_TAG</option>
+                </field>
+                <field name="price_field" type="text" label="PLG_CONTENT_PAYPALBUTTON_FIELD_PRICE_FIELD_LABEL" description="PLG_CONTENT_PAYPALBUTTON_FIELD_PRICE_FIELD_DESC" default="price" showon="source:custom_fields" />
+                <field name="product_name_field" type="text" label="PLG_CONTENT_PAYPALBUTTON_FIELD_PRODUCT_NAME_FIELD_LABEL" description="PLG_CONTENT_PAYPALBUTTON_FIELD_PRODUCT_NAME_FIELD_DESC" default="article_title" showon="source:custom_fields" />
+            </fieldset>
+
+            <fieldset name="auto_insert" label="PLG_CONTENT_PAYPALBUTTON_FIELDSET_AUTO_INSERT">
+                <field name="auto_insert_enabled" type="radio" label="PLG_CONTENT_PAYPALBUTTON_FIELD_AUTO_INSERT_ENABLED_LABEL" description="PLG_CONTENT_PAYPALBUTTON_FIELD_AUTO_INSERT_ENABLED_DESC" default="0" class="btn-group btn-group-yesno">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="categories" type="category" extension="com_content" multiple="true" label="PLG_CONTENT_PAYPALBUTTON_FIELD_CATEGORIES_LABEL" description="PLG_CONTENT_PAYPALBUTTON_FIELD_CATEGORIES_DESC" showon="auto_insert_enabled:1" />
+                <field name="position" type="list" label="PLG_CONTENT_PAYPALBUTTON_FIELD_POSITION_LABEL" description="PLG_CONTENT_PAYPALBUTTON_FIELD_POSITION_DESC" default="after_content" showon="auto_insert_enabled:1">
+                    <option value="after_title">PLG_CONTENT_PAYPALBUTTON_OPTION_POSITION_AFTER_TITLE</option>
+                    <option value="before_content">PLG_CONTENT_PAYPALBUTTON_OPTION_POSITION_BEFORE_CONTENT</option>
+                    <option value="after_content">PLG_CONTENT_PAYPALBUTTON_OPTION_POSITION_AFTER_CONTENT</option>
+                </field>
+            </fieldset>
+
+            <fieldset name="design" label="PLG_CONTENT_PAYPALBUTTON_FIELDSET_DESIGN">
+                <field name="button_style" type="list" label="PLG_CONTENT_PAYPALBUTTON_FIELD_BUTTON_STYLE_LABEL" description="PLG_CONTENT_PAYPALBUTTON_FIELD_BUTTON_STYLE_DESC" default="pill">
+                    <option value="pill">Pill</option>
+                    <option value="rect">Rectangle</option>
+                </field>
+                <field name="button_color" type="list" label="PLG_CONTENT_PAYPALBUTTON_FIELD_BUTTON_COLOR_LABEL" description="PLG_CONTENT_PAYPALBUTTON_FIELD_BUTTON_COLOR_DESC" default="gold">
+                    <option value="gold">Gold</option>
+                    <option value="blue">Blue</option>
+                    <option value="silver">Silver</option>
+                    <option value="black">Black</option>
+                </field>
+                <field name="button_label" type="list" label="PLG_CONTENT_PAYPALBUTTON_FIELD_BUTTON_LABEL_LABEL" description="PLG_CONTENT_PAYPALBUTTON_FIELD_BUTTON_LABEL_DESC" default="checkout">
+                    <option value="checkout">Checkout</option>
+                    <option value="pay">Pay</option>
+                    <option value="buynow">Buy Now</option>
+                    <option value="paypal">PayPal</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
