@@ -10,6 +10,9 @@
     <version>1.0.0</version>
     <description>PLG_CONTENT_PAYPALBUTTON_XML_DESCRIPTION</description>
     <namespace path="src">PontoMega\Plugin\Content\PaypalButton</namespace>
+    <updateservers>
+        <server type="extension" priority="1" name="PayPal Button Updates">https://raw.githubusercontent.com/uzielweb/paypal-button-payment-for-content/master/update.xml</server>
+    </updateservers>
     <files>
         <folder>language</folder>
         <folder>services</folder>
